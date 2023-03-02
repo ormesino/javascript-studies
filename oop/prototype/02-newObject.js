@@ -40,5 +40,5 @@
 
   const newUser = Object.create(user);
   newUser.init("Pedro", "pedro@gmail.com");
-  console.log(newUser.exibirInfos());
+  console.log(newUser.showInfo());
 }
