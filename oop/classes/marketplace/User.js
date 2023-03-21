@@ -1,4 +1,4 @@
-// Class declaration, the alternative to creating classes with prototypes
+//  Class declaration, the alternative to creating classes with prototypes
 export default class User {  
   constructor(name, email, role) {
     this.name = name;

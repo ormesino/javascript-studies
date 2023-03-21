@@ -7,4 +7,4 @@ export class Customer extends User {
     this.phone = phone;
     this.address = address;
   }
-}
+} 
