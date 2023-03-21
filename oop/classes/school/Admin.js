@@ -3,12 +3,12 @@
 import User from './User.js';
 
 export default class Admin extends User {
-    constructor(name, email, birth, role = 'admin'){
-        super(name, email, birth, role);
-        this.active = true;
-    }
+  constructor(name, email, birth, role = 'admin') {
+    super(name, email, birth, role);
+    this.active = true;
+  }
 
-    createCourse(courseName, seats) {
-        return `Course ${courseName} created with ${seats} seats.`
-    }
+  createCourse(courseName, seats) {
+    return `Course ${courseName} created with ${seats} seats.`;
+  }
 }
