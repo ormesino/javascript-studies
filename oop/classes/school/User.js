@@ -1,40 +1,29 @@
-// Reaproveitamento de código a partir da herança, para isso utilizamos export
+//  This class will be the superclass, for that we use 'export' to be able to import it in other files
 
 export default class User {
-    #nome   // o uso de # indica que o atributo agora é privado
-    constructor(nome, email, nascimento, role) {
-        this.#nome = nome,
+    #name   //  The use of # indicates that the attribute is now private
+    constructor(name, email, birth, role) {
+        this.#name = name,
         this.email = email,
-        this.nascimento = nascimento,
-        this.role = role || "estudante",
-        this.ativo = true
-    }
-    
-    #montaObjeto(){
-        return({
-            nome: this.#nome,
-            email: this.email,
-            nascimento: this.nascimento,
-            role: this.role || "estudante",
-            ativo: this.ativo,
-        })
+        this.birth = birth,
+        this.role = role || "student"
     }
 
-    exibirInfos(){
-        const objUser = this.#montaObjeto();
-        return `${objUser.nome}, ${objUser.email}, ${objUser.nascimento}, ${objUser.role}, ${objUser.ativo}`;
+    showInfo(){
+        const objUser = this.#createObject();
+        return `Here's the information requested: ${objUser.name}, ${objUser.email}, ${objUser.birth}, ${objUser.role}, ${objUser.active}`;
     }
     
-    //  Nunca recebe um argumento, apenas retorna
-    get nome(){
-        return this.#nome;
+    //  Never receives an argument, only returns
+    get name(){
+        return this.#name;
     }
 
-    //  Recebe apenas um parâmetro referente ao o que vai mudar dentro do código
-    set nome(nome){
-        if(nome === ""){
-            throw new Error("Formato inválido! Tente novamente.");
+    //  Receives only one parameter referring to what will change inside the code
+    set name(name){
+        if(name === ""){
+            throw new Error("Invalid format! Try again.");
         }
-        this.#nome = nome;
+        this.#name = name;
     } 
 }

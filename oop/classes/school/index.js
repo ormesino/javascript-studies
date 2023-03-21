@@ -1,20 +1,24 @@
-//  Arquivo criado para ser a "main" da pasta, onde endereçaremos todos os outros arquivos .js
+//  This file was created to be the "main" of the folder, where we will address all other .js files
 
-import User from './User.js';
-import Docente from './Docente.js';
 import Admin from './Admin.js';
+import Teacher from './Teacher.js';
+import User from './User.js';
 
 try{
-    const novoUser = new User('Pedro', 'pedro@gmail.com', '1997-02-18');
-    console.log(novoUser.exibirInfos());
+    const newUser = new User('Pedro', 'pedro@gmail.com', '1997-02-18');
+    console.log(newUser);
+    console.log(newUser.showInfo() + "\n\n");
 
-    const novoAdmin = new Admin("Mateus", 'mateus@gmail.com', '1998-02-18');
-    console.log(novoAdmin.exibirInfos());
-    console.log(novoAdmin.nome);    // Como o atributo 'nome' está como privado na super classe, a sub classe obedece a mesma regra, como temos um método get na super classe, isso se torna possível
+    const newAdmin = new Admin("Mateus", 'mateus@gmail.com', '1991-09-14');
+    console.log(newAdmin);
+    console.log(newAdmin.showInfo());
+    console.log(newAdmin.createCourse("NodeJS", "30"));
+    newAdmin.nome = "";     //  Because there is a set method, we can modify a private attribute
+    console.log(newAdmin.name + "\n\n");     //  Although the attribute is private, we can access it through the get method.
 
-    //  Por existir um método set, podemos fazer a modificação de um atributo privado
-    novoAdmin.nome = "";
-    console.log(novoAdmin.nome);
+    const newTeacher = new Teacher("Julia", "julia@gmail.com", "1989-02-17");
+    console.log(newTeacher);
+    console.log(newTeacher.studentAproval("Juliana", "JS"));
 } catch (err) {
     console.log(err.message);
 }
